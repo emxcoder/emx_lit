@@ -12,4 +12,4 @@ EXPOSE 8501
 ENV PORT 8501
 HEALTHCHECK CMD curl --fail http://localhost:${PORT}/_stcore/health || exit 1
 
-CMD ["sh", "-c", "streamlit run main.py --server.port=${PORT} --server.address=0.0.0.0"]
+CMD ["sh", "-c", "uv run python -m streamlit run main.py --server.port=${PORT} --server.address=0.0.0.0"]
